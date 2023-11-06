@@ -1,0 +1,16 @@
+.h4, .bi-sun-fill, .bi-plus-lg {
+    color: rgb(248, 247, 225);
+}
+
+body {
+    background: rgb(29, 29, 29);
+    color: rgb(248, 247, 225);
+}
+
+.bi-cup-hot-fill{
+    color: gold;
+}
+
+.footer {
+    background-color: #343a40;
+}
