@@ -22,5 +22,10 @@ let setAteTime = () => {
     document.getElementById('ate-time-div').innerHTML = time;
 }
 
-document.getElementById('woke-time-div').innerHTML = localStorage['wokeTime'];
-document.getElementById('ate-time-div').innerHTML = localStorage['ateTime'];
+const NO_ENTRY_MESSAGE = "No Entry"
+
+let wokeTime = localStorage['wokeTime'] ? localStorage['wokeTime'] : NO_ENTRY_MESSAGE;
+let ateTime = localStorage['ateTime'] ? localStorage['ateTime'] : NO_ENTRY_MESSAGE;
+
+document.getElementById('woke-time-div').innerHTML = wokeTime;
+document.getElementById('ate-time-div').innerHTML = ateTime;
