@@ -58,8 +58,9 @@ let submitNewEntry = (submitButtonId) => {
     let mins = timeEntry.split(":")[1];
     let amPm = hrsAs24 >= 12 ? "p.m." : "a.m.";
     let hrs = hrsAs24 > 12 ? (hrsAs24 - 12).toString() : hrsAs24.toString();
-    let time = `${hrs}:${mins} ${amPm}`
+    let time = `${hrs}:${mins} ${amPm}`;
     isWokeAt(id) ? setWokeTime(time) : setAteTime(time);
+    toggleEditButtons(id);
 }
 
 let toggleEditButtons = (id) => {
