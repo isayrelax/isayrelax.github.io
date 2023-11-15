@@ -7,7 +7,9 @@ let toggleTheme = () => {
 }
 
 let getTime = () => {
-    return new Date().toLocaleTimeString();
+    let time = new Date().toLocaleTimeString().split("")
+    time.splice(-8,3)
+    return time.join("")
 }
 
 let setWokeTime = (timeInput) => {
