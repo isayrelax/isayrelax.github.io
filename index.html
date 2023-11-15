@@ -28,20 +28,50 @@
 
     <div class="m-3">
         <div class="row align-items-center">
-            <div class="col-6">
-                <button class="btn btn-sm btn-primary m-2 w-100" onclick="setWokeTime()">
+            <div class="col-4">
+                <button id="button-1" class="btn btn-sm btn-primary col-12"
+                    onclick="setWokeTime()">
                     Woke At:
                 </button>
             </div>
-            <div class="col-6" id="woke-time-div">moo</div>
+            <div class="col-3" id="button-1-div"></div>
+            <div id="edit-button-group-1" class="col d-flex justify-content-end">
+                <button id="edit-1" class="btn btn-sm btn-primary m-2"
+                    onclick="editEntry(this.id)">
+                    Edit
+                </button>
+                <button id="cancel-1" class="btn btn-sm btn-danger m-2"
+                    onclick="cancelNewEntry(this.id)" hidden>
+                    ✕
+                </button>
+                <button id="submit-1" class="btn btn-sm btn-success m-2"
+                    onclick="submitNewEntry(this.id)" hidden>
+                    ✓
+                </button>
+            </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-6">
-                <button class="btn btn-sm btn-warning m-2 w-100" onclick="setAteTime()">
+            <div class="col-4">
+                <button id="button-2" class="btn btn-sm btn-warning col-12"
+                    onclick="setAteTime()">
                     Ate At:
                 </button>
             </div>
-            <div class="col-6" id="ate-time-div"></div>
+            <div class="col-3" id="button-2-div"></div>
+            <div id="edit-button-group-2" class="col d-flex justify-content-end">
+                <button id="edit-2" class="btn btn-sm btn-primary m-2"
+                    onclick="editEntry(this.id)">
+                    Edit
+                </button>
+                <button id="cancel-2" class="btn btn-sm btn-danger m-2"
+                    onclick="cancelNewEntry(this.id)" hidden>
+                    ✕
+                </button>
+                <button id="submit-2" class="btn btn-sm btn-success m-2"
+                    onclick="submitNewEntry(this.id)" hidden>
+                    ✓
+                </button>
+            </div>
         </div>
     </div>
 
