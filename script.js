@@ -1,3 +1,5 @@
+browserIsSafari = navigator.userAgent.includes("Safari");
+
 let toggleTheme = () => {
     let css = document.getElementById('css-file');
     let darkModeIcon = document.getElementById('dark-mode-icon');
@@ -8,7 +10,7 @@ let toggleTheme = () => {
 
 let getTime = () => {
     let time = new Date().toLocaleTimeString().split("")
-    time.splice(-8,3)
+    time.splice(5,3)
     return time.join("")
 }
 
@@ -54,6 +56,8 @@ let cancelNewEntry = (cancelButtonId) => {
 }
 
 let submitNewEntry = (submitButtonId) => {
+    let am = browserIsSafari ? "AM" : "a.m.";
+    let pm = browserIsSafari ? "PM" : "p.m.";
     let id = submitButtonId.split("-")[1];
     let timeEntry = document.getElementById(`new-entry-${id}`).value;
     let hrsAs24 = Number(timeEntry.split(":")[0]);
@@ -70,6 +74,16 @@ let toggleEditButtons = (id) => {
     editButtonGroup.querySelectorAll('button').forEach(button => {
         button.hidden ? button.hidden = false : button.hidden = true;
     })
+}
+
+let removeVersionUpdate = () => {
+    localStorage.setItem('versionUpdateRemoved', 'true');
+}
+
+const myModal = new bootstrap.Modal(document.getElementById('versionUpdateModal'))
+
+if (!localStorage.hasOwnProperty('versionUpdateRemoved')) {
+    myModal.show();
 }
 
 const NO_ENTRY_MESSAGE = "No Entry"
