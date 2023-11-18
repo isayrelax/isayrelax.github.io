@@ -16,7 +16,6 @@ let getTime = () => {
 
 let setWokeTime = (timeInput) => {
     let time = timeInput || getTime();
-    console.log('time', time)
     localStorage.setItem('wokeTime', time);
     document.getElementById('button-1-div').innerHTML = time;
 }
@@ -74,16 +73,6 @@ let toggleEditButtons = (id) => {
     editButtonGroup.querySelectorAll('button').forEach(button => {
         button.hidden ? button.hidden = false : button.hidden = true;
     })
-}
-
-let removeVersionUpdate = () => {
-    localStorage.setItem('versionUpdateRemoved', 'true');
-}
-
-const myModal = new bootstrap.Modal(document.getElementById('versionUpdateModal'))
-
-if (!localStorage.hasOwnProperty('versionUpdateRemoved')) {
-    myModal.show();
 }
 
 const NO_ENTRY_MESSAGE = "No Entry"
