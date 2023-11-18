@@ -31,17 +31,12 @@
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="versionUpdateModalLabel">What's New in Version 0.11.0.1:</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="removeVersionUpdate()"></button>
+            <h2 class="modal-title fs-5" id="versionUpdateModalLabel">What's New in Version <span id="version-number"></span>:</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="setVersion()"></button>
             </div>
-            <div class="modal-body">
-            <div>🐞 The time is now displayed on one line when entered manually.</div>
-            <div>🐞 When you click on "Woke Time" or "Ate Time" repeatedly, the correct time is displayed.</div>
-            <div>👍 "a.m." is now displayed as "AM" in Safari, when time entered manually.</div>
-            <div>🎉 You will now receive version updates.</div>
-            </div>
+            <div id="version-updates" class="modal-body"></div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="removeVersionUpdate()">Cool, thanks.</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="setVersion()">Cool, thanks.</button>
             </div>
         </div>
         </div>
@@ -107,6 +102,7 @@
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script src="versions.js"></script>
 </body>
 
 </html>
