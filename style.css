@@ -18,3 +18,8 @@
 .footer {
     background-color: #6c757d;
 }
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+}
