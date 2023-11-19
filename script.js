@@ -9,9 +9,13 @@ let toggleTheme = () => {
 }
 
 let getTime = () => {
-    let time = new Date().toLocaleTimeString().split("")
-    time.splice(5,3)
-    return time.join("")
+    let time = new Date().toLocaleTimeString().split("");
+    time.splice(5,3);
+    return time.join("");
+}
+
+let getDate = () => {
+    return new Date().toString().split(" ").slice(0,3).join(" ");
 }
 
 let setWokeTime = (timeInput) => {
@@ -24,6 +28,28 @@ let setAteTime = (timeInput) => {
     let time = timeInput || getTime();
     localStorage.setItem('ateTime', time);
     document.getElementById('button-2-div').innerHTML = time;
+}
+
+let setGaveDrops = () => {
+    let date = getDate();
+    localStorage.setItem('gaveDrops', date);
+    document.getElementById('button-3-div').innerHTML = date;
+}
+
+let clearGaveDrops = () => {
+    let gaveDropsDiv = document.getElementById('button-3-div');
+    gaveDropsDiv.innerHTML = NO_ENTRY_MESSAGE;
+    localStorage.setItem('gaveDrops', "");
+}
+
+let clearDropsDateIfNewDay = () => {
+    let gaveDrops = localStorage['gaveDrops'];
+    console.log(gaveDrops)
+    console.log(getDate())
+    console.log(gaveDrops != getDate())
+    if (gaveDrops != getDate()) {
+        clearGaveDrops();
+    }
 }
 
 let loadTime = () => {
@@ -75,10 +101,14 @@ let toggleEditButtons = (id) => {
     })
 }
 
-const NO_ENTRY_MESSAGE = "No Entry"
+const NO_ENTRY_MESSAGE = "No Entry";
 
 let wokeTime = localStorage['wokeTime'] ? localStorage['wokeTime'] : NO_ENTRY_MESSAGE;
 let ateTime = localStorage['ateTime'] ? localStorage['ateTime'] : NO_ENTRY_MESSAGE;
+let gaveDrops = localStorage['gaveDrops'] ? localStorage['gaveDrops'] : NO_ENTRY_MESSAGE;
 
 document.getElementById('button-1-div').innerHTML = wokeTime;
 document.getElementById('button-2-div').innerHTML = ateTime;
+document.getElementById('button-3-div').innerHTML = gaveDrops;
+
+clearDropsDateIfNewDay();
