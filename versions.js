@@ -7,6 +7,16 @@ const updateTypes = {
 
 const versions = [
   {
+    "date": "11.18.2023",  // use Date object eventually
+    "versionNumber": "0.11.1.0",
+    "updates": [
+      {
+        "updateType": updateTypes.achievement,
+        "text": "You can now log that you've given drops. The entry is reset every day."
+      },
+    ]
+  },
+  {
     "date": "11.17.2023",  // use Date object eventually
     "versionNumber": "0.11.0.1",
     "updates": [
