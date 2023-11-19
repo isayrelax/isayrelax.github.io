@@ -44,7 +44,7 @@
   
     <div class="mx-2 my-3">
         <div class="row align-items-center">
-            <div class="col-5 my-1">
+            <div class="col-5 my-2">
                 <button id="button-1" class="btn btn-sm btn-primary col-12"
                     onclick="setWokeTime()">
                     Woke At:
@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-5 my-1">
+            <div class="col-5 my-2">
                 <button id="button-2" class="btn btn-sm btn-warning col-12"
                     onclick="setAteTime()">
                     Ate At:
@@ -90,18 +90,15 @@
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-5 my-1">
-                <button id="button-3" class="btn btn-sm btn-secondary col-12"
-                    onclick="setGaveDrops()">
-                    Gave Drops
-                </button>
+            <div class="col-5 my-2">
+                <div id="button-3"  class="col-12 text-center">
+                    Gave Drops:
+                </div>
             </div>
             <div class="col-3 p-0" id="button-3-div"></div>
             <div id="edit-button-group-3" class="col-4 d-flex justify-content-end">
-                <button id="edit-3" class="btn btn-sm btn-danger"
-                    onclick="clearGaveDrops()">
-                    Clear
-                </button>
+                <input type="checkbox" class="checkbox" name="gaveDropsCheckbox"
+                    id="gaveDropsCheckbox" onclick="toggleGaveDrops()">
             </div>
         </div>
     </div>
