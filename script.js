@@ -34,19 +34,29 @@ let setGaveDrops = () => {
     let date = getDate();
     localStorage.setItem('gaveDrops', date);
     document.getElementById('button-3-div').innerHTML = date;
+    document.getElementById('gaveDropsCheckbox').checked = true;
 }
 
 let clearGaveDrops = () => {
     let gaveDropsDiv = document.getElementById('button-3-div');
-    gaveDropsDiv.innerHTML = NO_ENTRY_MESSAGE;
+    gaveDropsDiv.innerHTML = "";
     localStorage.setItem('gaveDrops', "");
+    document.getElementById('gaveDropsCheckbox').checked = false;
+}
+
+let toggleGaveDrops = () => {
+    let gaveDropsChecked = Boolean(localStorage['gaveDrops']);
+    gaveDropsChecked ? clearGaveDrops() : setGaveDrops();
+}
+
+let setGaveDropsCheckbox = () => {
+    gaveDrops ?
+    document.getElementById('gaveDropsCheckbox').checked = true :
+    document.getElementById('gaveDropsCheckbox').checked = false;
 }
 
 let clearDropsDateIfNewDay = () => {
     let gaveDrops = localStorage['gaveDrops'];
-    console.log(gaveDrops)
-    console.log(getDate())
-    console.log(gaveDrops != getDate())
     if (gaveDrops != getDate()) {
         clearGaveDrops();
     }
@@ -105,10 +115,12 @@ const NO_ENTRY_MESSAGE = "No Entry";
 
 let wokeTime = localStorage['wokeTime'] ? localStorage['wokeTime'] : NO_ENTRY_MESSAGE;
 let ateTime = localStorage['ateTime'] ? localStorage['ateTime'] : NO_ENTRY_MESSAGE;
-let gaveDrops = localStorage['gaveDrops'] ? localStorage['gaveDrops'] : NO_ENTRY_MESSAGE;
+let gaveDrops = localStorage['gaveDrops'] ? localStorage['gaveDrops'] : "";
 
 document.getElementById('button-1-div').innerHTML = wokeTime;
 document.getElementById('button-2-div').innerHTML = ateTime;
 document.getElementById('button-3-div').innerHTML = gaveDrops;
+setGaveDropsCheckbox();
+
 
 clearDropsDateIfNewDay();
