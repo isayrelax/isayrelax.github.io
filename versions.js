@@ -8,6 +8,20 @@ const updateTypes = {
 const versions = [
   {
     "date": "11.18.2023",  // use Date object eventually
+    "versionNumber": "0.11.1.1",
+    "updates": [
+      {
+        "updateType": updateTypes.achievement,
+        "text": "You can now log that you've given drops. The entry is reset every day."
+      },
+      {
+        "updateType": updateTypes.achievement,
+        "text": "'Gave Drops' logger is now controlled by a checkbox instead of a button."
+      }
+    ]
+  },
+  {
+    "date": "11.18.2023",  // use Date object eventually
     "versionNumber": "0.11.1.0",
     "updates": [
       {
