@@ -10,7 +10,7 @@ let toggleTheme = () => {
 
 let getTime = () => {
     let time = new Date().toLocaleTimeString().split("");
-    time.splice(5,3);
+    time.splice(-8, 3);
     return time.join("");
 }
 
