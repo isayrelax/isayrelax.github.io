@@ -20,8 +20,26 @@
             <span class="navbar-brand mb-0 h4">
                 <i id="cup-icon" class="bi bi-stopwatch-fill"></i> tiimer</i>
             </span>
-            <div class="mb-0 h4">
-                <i role="button" onclick="toggleTheme()" id="dark-mode-icon" class="bi bi-moon-fill"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="navbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end bg-secondary bg-opacity75 w-50"
+                tabindex="-1" id="offcanvasNavbar" aria-labelledby="navbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="navbarLabel">Menu</h5>
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-2">
+                        <li class="nav-item">
+                            <i role="button" onclick="toggleTheme()"
+                                id="dark-mode-icon" class="bi bi-moon-fill"></i>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
