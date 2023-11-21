@@ -6,6 +6,11 @@ html, body {
     color: gold;
 }
 
+.navbar-toggler-icon {
+    width: .9rem;
+    height: .9rem;
+}
+
 .h4, .bi-moon-fill {
     color: white;
 }
