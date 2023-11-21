@@ -7,6 +7,24 @@ const updateTypes = {
 
 const versions = [
   {
+    "date": "11.20.2023",  // use Date object eventually
+    "versionNumber": "0.11.2.0",
+    "updates": [
+      {
+        "updateType": updateTypes.bug,
+        "text": "Fixed issue where time displayed an extra colon ':'."
+      },
+      {
+        "updateType": updateTypes.feature,
+        "text": "Eliminated horizontal scroll, along with additional white space on right of screen."
+      },
+      {
+        "updateType": updateTypes.feature,
+        "text": "A menu was added, where you can find the theme toggle button."
+      }
+    ]
+  },
+  {
     "date": "11.18.2023",  // use Date object eventually
     "versionNumber": "0.11.1.1",
     "updates": [
