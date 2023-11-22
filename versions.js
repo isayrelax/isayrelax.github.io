@@ -1,3 +1,8 @@
+const pageTypes = {
+  "index": window.location.href.includes('index.html'),
+  "release_history": window.location.href.includes("release_history.html"),
+}
+
 const updateTypes = {
   "bug": "🐞",
   "modification": "👍",
@@ -7,7 +12,21 @@ const updateTypes = {
 
 const versions = [
   {
-    "date": "11.20.2023",  // use Date object eventually
+    "date": "11.21.2023",
+    "versionNumber": "0.11.3.0",
+    "updates": [
+      {
+        "updateType": updateTypes.achievement,
+        "text": "You can now see past releases in the menu."
+      },
+      {
+        "updateType": updateTypes.bug,
+        "text": "Fixed 'Gave Drops' checkbox and theme toggle button sizes in dark theme."
+      }
+    ]
+  },
+  {
+    "date": "11.20.2023",
     "versionNumber": "0.11.2.0",
     "updates": [
       {
@@ -25,7 +44,7 @@ const versions = [
     ]
   },
   {
-    "date": "11.18.2023",  // use Date object eventually
+    "date": "11.18.2023",
     "versionNumber": "0.11.1.1",
     "updates": [
       {
@@ -39,7 +58,7 @@ const versions = [
     ]
   },
   {
-    "date": "11.18.2023",  // use Date object eventually
+    "date": "11.18.2023",
     "versionNumber": "0.11.1.0",
     "updates": [
       {
@@ -78,7 +97,7 @@ let setVersion = () => {
   localStorage.setItem('versionNumber', latestVersionNumber);
 }
 
-const myModal = new bootstrap.Modal(document.getElementById('versionUpdateModal'))
+const myModal = new bootstrap.Modal(document.getElementById('versionUpdateModal'));
 
 if (localStorage.versionNumber != latestVersionNumber) {
   myModal.show();
@@ -89,8 +108,19 @@ let displayVersionUpdates = () => {
   const versionUpdatesDiv = document.getElementById('version-updates');
   versionNumberSpan.innerHTML += latestVersionNumber
   for (update of versions[0].updates) {
-    versionUpdatesDiv.innerHTML += `<div class="d-flex mb-2"><div class="d-flex me-2">${update.updateType}</div><div class="d-flex lh-sm"><small>${update.text}</small></div></div>`;
+    let updateComponent = `<div class="d-flex mb-2"><div class="d-flex me-2">${update.updateType}</div><div class="d-flex lh-sm"><small>${update.text}</small></div></div>`;
+    versionUpdatesDiv.innerHTML += updateComponent
   }
 }
 
 displayVersionUpdates();
+
+if (pageTypes.release_history) {
+  let releasesDiv = document.getElementById('releases');
+  for (version of versions) {
+    releasesDiv.innerHTML += `<div class="d-flex mt-4 mb-0 h5">${version.date}</div><div class="d-flex h6">version ${version.versionNumber}</div>`
+    for (update of version.updates) {
+      releasesDiv.innerHTML += `<div class="d-flex mb-2"><div class="d-flex me-2">${update.updateType}</div><div class="d-flex lh-sm"><small>${update.text}</small></div></div>`;
+    }
+  }
+}
