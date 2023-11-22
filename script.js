@@ -1,13 +1,5 @@
 browserIsSafari = navigator.userAgent.includes("Safari");
 
-let toggleTheme = () => {
-    let css = document.getElementById('css-file');
-    let darkModeIcon = document.getElementById('dark-mode-icon');
-    css.href = css.href.includes('dark.css') ? 'style.css' : 'dark.css';
-    darkModeIcon.classList.toggle('bi-moon-fill');
-    darkModeIcon.classList.toggle('bi-sun-fill');
-}
-
 let getTime = () => {
     let time = new Date().toLocaleTimeString().split("");
     time.splice(-8, 3);
@@ -121,6 +113,4 @@ document.getElementById('button-1-div').innerHTML = wokeTime;
 document.getElementById('button-2-div').innerHTML = ateTime;
 document.getElementById('button-3-div').innerHTML = gaveDrops;
 setGaveDropsCheckbox();
-
-
 clearDropsDateIfNewDay();
