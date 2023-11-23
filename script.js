@@ -2,7 +2,8 @@ browserIsSafari = navigator.userAgent.includes("Safari");
 
 let getTime = () => {
     let time = new Date().toLocaleTimeString().split("");
-    time.splice(-8, 3);
+    let indexOfSeconds = browserIsSafari ? -6 : -8
+    time.splice(indexOfSeconds, 3);
     return time.join("");
 }
 
