@@ -13,12 +13,16 @@ const updateTypes = {
 const versions = [
   {
     "date": "11.22.2023",
-    "versionNumber": "0.11.4.0",
+    "versionNumber": "0.11.4.1",
     "updates": [
       {
         "updateType": updateTypes.achievement,
-        "text": "A new shortcut icon is displayed when adding app to home screen."
-      }
+        "text": "A new shortcut icon is displayed when adding app to home screen on mobile."
+      },
+      {
+        "updateType": updateTypes.bug,
+        "text": "Fixed issue causing time to display the current 'seconds' as minutes when clicking 'Woke At' or 'Ate At' in Safari."
+      },
     ]
   },
   {
