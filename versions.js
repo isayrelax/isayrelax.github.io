@@ -12,6 +12,16 @@ const updateTypes = {
 
 const versions = [
   {
+    "date": "11.22.2023",
+    "versionNumber": "0.11.4.0",
+    "updates": [
+      {
+        "updateType": updateTypes.achievement,
+        "text": "A new shortcut icon is displayed when adding app to home screen."
+      }
+    ]
+  },
+  {
     "date": "11.21.2023",
     "versionNumber": "0.11.3.0",
     "updates": [
